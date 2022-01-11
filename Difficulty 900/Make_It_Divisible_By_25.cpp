@@ -30,10 +30,10 @@ int main()
         {
             for (int k = j + 1; k < size; k++)
             {
-                int num = (input[i][j] - '0') * 10 + (input[i][k] - '0');
+                int num = (input[i][j] - '0') * 10 + (input[i][k] - '0'); // - '0' is to convert char to int (ASCII code of '0' is 48), int x = (int)character - 48;
                 if (num%25 == 0)
                 {
-                    result[i] = min(ans, (k - j - 1) + (size - 1 - k));
+                    result[i] = min(result[i], (k - j - 1) + (size - 1 - k));
                 }
             }
         }
