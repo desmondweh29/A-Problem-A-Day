@@ -23,43 +23,20 @@ int main()
 
     for (int i = 0; i < t; i++)
     {
-        
-        bool div = false;
-        int count = 0;
+        int size = input[i].size();
+        int ans = size;
 
-        while (!div)
+        for (int j = 0; j < size; j++)
         {
-            int last2 = (input[i].size()) - 2;
-            string check = input[i].substr(last2, 2);
-
-            if (check == "00" || check == "25" || check == "50" || check == "75")
+            for (int k = j + 1; k < size; k++)
             {
-                div = true;
-            }
-            else
-            {
-                if (check[1] == '0' || check[1] == '5')
+                int num = (input[i][j] - '0') * 10 + (input[i][k] - '0');
+                if (num%25 == 0)
                 {
-                    if (check == "05" || check == "55")
-                    {
-                        input[i].pop_back();
-                    }
-                    else
-                    {
-                        input[i].erase(input[i].begin() + last2);
-                    }
-                    count++;
+                    result[i] = min(ans, (k - j - 1) + (size - 1 - k));
                 }
-                else
-                {
-                    input[i].pop_back();
-                    count++;
-                }
-                
             }
         }
-
-        result[i] = count;
     }
 
     for (auto i : result)
