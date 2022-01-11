@@ -33,10 +33,11 @@ int main()
                 int num = (input[i][j] - '0') * 10 + (input[i][k] - '0'); // - '0' is to convert char to int (ASCII code of '0' is 48), int x = (int)character - 48;
                 if (num%25 == 0)
                 {
-                    result[i] = min(result[i], (k - j - 1) + (size - 1 - k));
+                    ans = min(ans, (k - j - 1) + (size - 1 - k));
                 }
             }
         }
+        result[i] = ans;
     }
 
     for (auto i : result)
