@@ -13,6 +13,7 @@ int main()
 
     vector<int> input_n (t);
     vector<vector<long long>> input_a(t);
+    vector<int> result(t);
 
     for (int i = 0; i < t; i++)
     {
@@ -30,19 +31,21 @@ int main()
 
     for (int i = 0; i < t; i++)
     {
-        bool arranged = false;
-        int size = input_a[i].size();
-        long long x = input_a[i][size - 1];
-
-        while (!arranged)
+        long long max = 0;
+        int count = 0;
+        for (int j = input_a[i].size() - 1; j >= 0; j--)
         {
-            // vector <long long> gt;
-            // vector<long long> lt;
-
-            for ()
-
-
+            if (input_a[i][j] > max)
+            {
+                max = input_a[i][j];
+                count++;
+            }
         }
+        result[i] = count - 1;
+    }
 
+    for (auto i : result)
+    {
+        cout << i << "\n";
     }
 }
