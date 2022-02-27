@@ -12,6 +12,7 @@
         "iosfwd": "cpp",
         "atomic": "cpp",
         "bitset": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "ostream": "cpp"
     }
 }
