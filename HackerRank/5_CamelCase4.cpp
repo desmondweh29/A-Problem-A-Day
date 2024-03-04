@@ -6,6 +6,7 @@
 #include <cctype>
 #include <numeric>
 #include <sstream>
+#include <functional>
 
 std::vector<std::string> split(std::string input, std::string delimiter)
 // https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c
@@ -81,6 +82,17 @@ std::string formatCamelCase(std::string type, std::string word)
     return result;
 }
 
+std::string rtrim(const std::string &str)
+{
+    std::string s(str);
+
+    s.erase(
+        find_if(s.rbegin(), s.rend(), not1(std::ptr_fun<int, int>(isspace))).base(),
+        s.end());
+
+    return s;
+}
+
 int main()
 {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
@@ -92,7 +104,7 @@ int main()
     {
         if (input.empty())
             break;
-        inputs.push_back(input);
+        inputs.push_back(rtrim(input));
     }
 
     for (std::string i : inputs)
