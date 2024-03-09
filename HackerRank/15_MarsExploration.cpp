@@ -17,8 +17,8 @@ int marsExploration(string s)
 
     for (int i = 0; i < s.length(); i++)
     {
-        // if (pos >= msg.length())
-        if (i % 3 == 0)
+        if (pos >= msg.length())
+        //if (i % 3 == 0)
             pos = 0;
 
         if (s[i] != msg[pos])
