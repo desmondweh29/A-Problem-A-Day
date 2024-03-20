@@ -15,7 +15,7 @@ void separateNumbers(string s)
 {
     int numberSize = 1;
 
-    for (int i = numberSize; i <= s.size() / 2; i++)
+    for (unsigned int i = numberSize; i <= s.size() / 2; i++)
     {
         long long num = stoll(s.substr(0, i));
         auto first_num = num;
