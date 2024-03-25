@@ -24,6 +24,9 @@ vector<int> dynamicArray(int n, vector<vector<int>> queries)
     for (const auto query : queries)
     {
         int idx = (query[1] ^ lastAnswer) % n;
+        // XOR
+        // - diff bits -> TRUE
+        // - same bits -> FALSE
 
         if (query[0] == 1)
         {
