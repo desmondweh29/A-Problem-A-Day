@@ -32,7 +32,7 @@ void countSort(vector<vector<string>> arr)
         {
             if (stoi(arr[i][0]) == j)
             {
-                brr[j] += arr[j][1];
+                brr[j] += arr[i][1];
                 brr[j] += " ";
             }
         }
